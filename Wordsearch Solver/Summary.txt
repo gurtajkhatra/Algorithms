@@ -1,0 +1,17 @@
+Runtimes for project 3A (using quicksort and binary search):
+Time taken to sort: 0.138871
+Time taken to search: 0.063036
+Total time taken: 0.201907
+
+Runtimes for project 3B (using heapsort and hashtables) :
+Time taken to sort: 0.25747
+Time taken to search: 0.473488
+Total time taken: 0.730958
+
+NOTE: 
+TO GET THIS PROGRAM TO WORK, PASTE THE PATH OF THE WORDLIST AND THE PATH OF THE GRID FILE INTO THE SPECIFIED AREA IN THE MAIN FUNCTION. EMAIL ME AT KHATRA.G@HUSKY.NEU.EDU IF YOU CANNOT GET THIS TO WORK.
+
+
+In this second project, the reason heapsort ended up being a little slower than quicksort is that I had to take some time to actually create the heap before being able to sort it. If I was going to be maintaining this wordlist, and constantly adding items to this heap object, then it would definitely make sense to store the heap somewhere. 
+
+The reason my binary search outperformed the hash table is because the binary search was slightly modified taking into account that the smallest possible word was going to be 5 characters. Therefore, I was able to get the strings of 5 character length at each position in the grid, and just do a binary search of the wordlist to find any words that start with that 5 character string, and then compare those to the total string at the position I was checking. However, this isn’t possible with hash tables. I had to first find the maximum length string in the list, and then at each position in the grid I had to search the hash table for possible words from the minimum word length to the maximum word length. However it performed the search fairly quickly for the amount of searches it had to do.
